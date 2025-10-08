@@ -1,0 +1,62 @@
+# Simple workflow for deploying a React/Vite project to GitHub Pages
+name: Deploy Portfolio to Pages
+
+on:
+  # Runs on pushes targeting the master branch
+  push:
+    branches: ["master"] # Ensure this matches your branch name
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 1. Build job: Builds the project using npm/yarn
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Use a modern Node version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project (Creates the 'dist' folder)
+        run: npm run build 
+        # Note: If your package.json uses 'yarn build' or 'pnpm build', change this line
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact (The 'dist' folder)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This tells the Action to ONLY upload the contents of the 'dist' directory
+          path: 'dist' 
+
+  # 2. Deploy job: Deploys the built artifact
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build # This ensures the deploy job waits for the build job to finish
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
