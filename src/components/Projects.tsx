@@ -9,7 +9,7 @@ const Projects = () => {
       technologies: ["React.js", "Node.js", "WebRTC", "Socket.IO"],
       image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
       github: "https://github.com/rahulnegi321/zoom-clone",
-      live: "https://pleasechalja.onrender.com"
+      live: "https://zoom-clone-pj1t.onrender.com/"
     },
     {
       title: "Social Media Backend",
