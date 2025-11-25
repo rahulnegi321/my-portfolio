@@ -35,9 +35,9 @@ const About = () => {
               real-world problems.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My journey in tech has been marked by consistent achievement - I've solved 700+ DSA problems 
-              on LeetCode and GeeksforGeeks, ranking in the top 21% globally on LeetCode. I was also selected 
-              as a SpaceCon Hackathon Finalist among the top 20 teams from 10,000+ participants nationwide.
+              My journey in tech has been marked by consistent achievement - I've solved 1000+ DSA problems 
+              on LeetCode and GeeksforGeeks, ranking in the top 8% globally on LeetCode. I was also selected 
+              as a SpaceCon Hackathon Finalist among the top 16 teams from 2,000+ participants nationwide.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Beyond coding, I bring leadership experience as a Team Captain in competitive sports and believe 
