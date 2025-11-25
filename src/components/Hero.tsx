@@ -52,7 +52,7 @@ const Hero = () => {
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto section-reveal revealed delay-200">
           Building scalable web applications with modern technologies. B.Tech student at NSUT 
-          with 700+ DSA problems solved and a passion for creating seamless user experiences.
+          with 1000+ DSA problems solved and a passion for creating seamless user experiences.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center section-reveal revealed delay-300">
