@@ -15,4 +15,33 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor": [
+            "react",
+            "react-dom",
+            "react-router-dom",
+            "@tanstack/react-query"
+          ],
+          "framer": ["framer-motion"],
+          "ui": [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-alert-dialog",
+            "@radix-ui/react-avatar",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-label",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-scroll-area",
+            "@radix-ui/react-select",
+            "@radix-ui/react-slider",
+            "@radix-ui/react-tabs",
+          ],
+          "supabase": ["@supabase/supabase-js"],
+        },
+      },
+    },
+  },
 }));
